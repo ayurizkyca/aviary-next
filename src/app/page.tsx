@@ -44,7 +44,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="overflow-x-auto scrollbar-hide">
+        <div className="overflow-x-auto scrollbar-hide py-10">
           <div className="flex gap-6 w-max">
             {videos.map((video) => (
               <VideoCard key={video.youtubeId} {...video} />
