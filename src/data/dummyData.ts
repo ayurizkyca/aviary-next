@@ -1,3 +1,4 @@
+import { CommunityCardProps } from "../../components/CommunityCard";
 import { NewsCardProps } from "../../components/NewsCard";
 import { VideoCardProps } from "../../components/VideoCard";
 
@@ -50,3 +51,16 @@ export const news: NewsCardProps[] = [
     imgUrl: "/img/Property 1=4.png"
   },
 ];
+
+export const userActivities: CommunityCardProps[] = [
+  {
+    user: "John Doe",
+    activity: "Mengikuti patroli hutan di Papua",
+    imgUrl: "/img/user-1.jpg"
+  },
+  {
+    user: "Jane Smith",
+    activity: "Membantu mendirikan stasiun pengamatan burung",
+    imgUrl: "/img/user-2.jpg"
+  },
+]

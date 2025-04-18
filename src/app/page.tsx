@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import Navbar from '../../components/Navbar';
-import { news, videos } from '@/data/dummyData';
+import { news, userActivities, videos } from '@/data/dummyData';
 import VideoCard from '../../components/VideoCard';
 import Link from 'next/link';
 import NewsCard from '../../components/NewsCard';
+import CommunityCard from '../../components/CommunityCard';
 
 export default function Home() {
   return (
@@ -64,7 +65,11 @@ export default function Home() {
               See All
             </Link>
           </div>
-
+          <div className='flex flex-col gap-2'>
+            {userActivities.map((userActivity)=>(
+              <CommunityCard key={`${userActivity.user}${userActivity.imgUrl}`} {...userActivity}/>
+            ))}
+          </div>
         </section>
       </div>
     </div>
