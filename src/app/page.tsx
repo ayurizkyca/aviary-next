@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import Navbar from '../../components/Navbar';
+import { videos } from '@/data/dummyData';
+import VideoCard from '../../components/VideoCard';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div>
-      <Navbar/>
+    <div className='bg-white'>
+      <Navbar />
+      {/* hero section */}
       <div className="relative">
         <Image
           src="/img/img-desktop.png"
@@ -19,6 +23,33 @@ export default function Home() {
             Kami berkomitmen untuk melindungi burung yang terancam punah dan habitatnya. Bergabunglah dengan kami dalam upaya pelestarian ini.
           </p>
         </div>
+      </div>
+      {/* section videos */}
+      <section className="px-6 md:px-12 py-10">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-semibold text-[#1a1a1a]">Pemantauan Populer</h2>
+          <Link href="/videos" className="text-sm text-gray-500 hover:underline">
+            See All
+          </Link>
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {videos.map((video) => (
+            <VideoCard key={video.youtubeId} {...video} />
+          ))}
+        </div>
+      </section>
+      <div className='flex px-6 md:px-12 py-10'>
+        {/* News Section */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#1a1a1a]">Berita Terbaru</h2>
+        </section>
+
+        {/* Community Section */}
+        <section>
+          <h2 className="text-2xl font-semibold text-[#1a1a1a]">Komunitas</h2>
+
+        </section>
       </div>
     </div>
   );
