@@ -39,23 +39,26 @@ export default function Home() {
       <section className="px-6 md:px-12 py-10">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold text-[#1a1a1a]">Pemantauan Populer</h2>
-          <Link href="/videos" className="text-sm text-gray-500 hover:underline">
+          <Link href="/" className="text-sm text-gray-500 hover:underline">
             See All
           </Link>
         </div>
 
-        <div className="flex gap-6">
-          {videos.map((video) => (
-            <VideoCard key={video.youtubeId} {...video} />
-          ))}
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex gap-6 w-max">
+            {videos.map((video) => (
+              <VideoCard key={video.youtubeId} {...video} />
+            ))}
+          </div>
         </div>
+
       </section>
       <div className='md:flex px-6 md:px-12 py-10 gap-16'>
         {/* News Section */}
         <section className='md:w-1/2'>
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-semibold text-[#1a1a1a]">Berita Terbaru</h2>
-            <Link href="/videos" className="text-sm text-gray-500 hover:underline">
+            <Link href="/" className="text-sm text-gray-500 hover:underline">
               See All
             </Link>
           </div>
@@ -70,7 +73,7 @@ export default function Home() {
         <section className='md:w-1/2'>
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-semibold text-[#1a1a1a]">Komunitas</h2>
-            <Link href="/videos" className="text-sm text-gray-500 hover:underline">
+            <Link href="/" className="text-sm text-gray-500 hover:underline">
               See All
             </Link>
           </div>
