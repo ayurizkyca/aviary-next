@@ -36,7 +36,7 @@ export const news: NewsCardProps[] = [
     imgUrl: "/img/Property 1=1.png"
   },
   {
-    title: "PWorkshop Komunitas",
+    title: "Workshop Komunitas",
     description: "Kami akan mengadakan workshop konservasi burung untuk masyarakat lokal.",
     imgUrl: "/img/Property 1=2.png"
   },
