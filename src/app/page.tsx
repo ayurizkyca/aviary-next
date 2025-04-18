@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Navbar from '../../components/Navbar';
-import { videos } from '@/data/dummyData';
+import { news, videos } from '@/data/dummyData';
 import VideoCard from '../../components/VideoCard';
 import Link from 'next/link';
+import NewsCard from '../../components/NewsCard';
 
 export default function Home() {
   return (
@@ -33,21 +34,36 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex gap-6">
           {videos.map((video) => (
             <VideoCard key={video.youtubeId} {...video} />
           ))}
         </div>
       </section>
-      <div className='flex px-6 md:px-12 py-10'>
+      <div className='flex px-6 md:px-12 py-10 gap-16'>
         {/* News Section */}
-        <section>
-          <h2 className="text-2xl font-semibold text-[#1a1a1a]">Berita Terbaru</h2>
+        <section className='w-1/2'>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-semibold text-[#1a1a1a]">Berita Terbaru</h2>
+            <Link href="/videos" className="text-sm text-gray-500 hover:underline">
+              See All
+            </Link>
+          </div>
+          <div className='flex flex-col gap-2'>
+            {news.map((news)=>(
+              <NewsCard key={news.imgUrl} {...news}/>
+            ))}
+          </div>
         </section>
 
         {/* Community Section */}
-        <section>
-          <h2 className="text-2xl font-semibold text-[#1a1a1a]">Komunitas</h2>
+        <section className='w-1/2'>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-semibold text-[#1a1a1a]">Komunitas</h2>
+            <Link href="/videos" className="text-sm text-gray-500 hover:underline">
+              See All
+            </Link>
+          </div>
 
         </section>
       </div>
